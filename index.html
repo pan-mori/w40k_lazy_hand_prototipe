@@ -17,7 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"
         integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -78,33 +80,31 @@
             </thead>
             <tbody class="roll-icon">
                 <tr>
-
-
-                    <td>2+</td>
+                    <td id="res2"> </td>
                     <td>2+</td>
                     <td>2+</td>
                     <td>2+</td>
                 </tr>
                 <tr>
-                    <td>3+</td>
+                    <td id="res3"> </td>
                     <td>3+</td>
                     <td>3+</td>
                     <td>3+</td>
                 </tr>
                 <tr>
-                    <td>4+</td>
+                    <td id="res4"> </td>
                     <td>4+</td>
                     <td>4+</td>
                     <td>4+</td>
                 </tr>
                 <tr>
-                    <td>5+</td>
+                    <td id="res5"> </td>
                     <td>5+</td>
                     <td>5+</td>
                     <td>5+</td>
                 </tr>
                 <tr>
-                    <td>6+</td>
+                    <td id="res6"> </td>
                     <td>6+</td>
                     <td>6+</td>
                     <td>6+</td>
@@ -128,13 +128,13 @@
                 </tr>
             </thead>
             <tbody class="roll-icon">
-                <tr>
-                    <td id="result1">1</td>
-                    <td id="result2">2</td>
-                    <td id="result3">3</td>
-                    <td id="result4">4</td>
-                    <td id="result5">5</td>
-                    <td id="result6">6</td>
+                <tr class="number_of_roll">
+                    <td id="result1">#</td>
+                    <td id="result2">#</td>
+                    <td id="result3">#</td>
+                    <td id="result4">#</td>
+                    <td id="result5">#</td>
+                    <td id="result6">#</td>
                 </tr>
                 <tr>
                     <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
@@ -153,12 +153,12 @@
                     <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
                 </tr>
                 <tr>
-                    <td>
-
-
-
-
-                    </td>
+                    <td id="one"></td>
+                    <td id="two"></td>
+                    <td id="three"></td>
+                    <td id="four"></td>
+                    <td id="five"></td>
+                    <td id="six"></td>
                 </tr>
 
 
@@ -185,7 +185,7 @@
             },
             pips: {
                 mode: 'values',
-                values: [1,2,3,4,5,6],
+                values: [1, 2, 3, 4, 5, 6],
                 density: 1
             }
         });
@@ -202,10 +202,10 @@
             dice_dic[rand] += +1
         }
 
-        dice_arr.sort()
         for (let i = 1; i < 7; i++) {
             document.getElementById("result" + i).innerHTML = dice_dic[i];
         }
+        draw_dice();
     }
 
 </script>
@@ -276,3 +276,45 @@
         document.getElementById("slider1").value = value
         document.getElementById("demo").value = value
     }</script>
+
+<script>
+
+    function draw_dice() {
+        //one 
+        var dice_arr = ["one", "two", "three", "four", "five", "six"]
+        dice_arr.forEach((Element, index) => {
+            index = index + 1
+            document.getElementById("" + Element + "").innerHTML = ""
+
+            var dice_one = document.getElementById("result" + index).innerText;
+            for (let i = 0; i < dice_one; i++) {
+                var one = document.createElement('i');
+                one.setAttribute('class', 'fas fa-dice-' + Element);
+                document.getElementById("" + Element + "").appendChild(one);
+
+            }
+
+
+        });
+
+    }
+</script>
+
+
+<script>
+    function resolut_count() {
+        for (let i = 2; i < 5; i++) {
+            var collum = document.getElementById("res" + i)
+
+
+            count = 0
+            for (let k = 1; k < 5; k++) {
+                count += Number(document.getElementById("result" + k).innerHTML)
+            }
+           
+            document.getElementById("result" + i).innerHTML =count
+
+
+        }
+    }
+</script>
