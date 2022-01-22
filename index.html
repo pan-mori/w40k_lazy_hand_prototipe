@@ -23,175 +23,230 @@
 
 </head>
 
-<body>
+<body class="bg-dark">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"
         integrity="sha512-ZKqmaRVpwWCw7S7mEjC89jDdWRD/oMS0mlfH96mO0u3wrPYoN+lXmqvyptH4P9mY6zkoPTSy5U2SwKVXRY5tYQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <div class="pure-g">
-        <div class="pure-u-1-12"> </div>
-        <div class="pure-u-1-2">
-            <h1> Warhammer lazy hand dice calculator</h1>
+    <div class="container ">
+        <div class="row justify-content-md-center">
+
+
+            <div class="col-12">
+                <div class=""> </div>
+                <div class=""></div>
+                <p class="h1 text-light d-flex justify-content-center mt-3"> Warhammer lazy hand dice calculator</p>
+            </div>
+
+
+
+            <div class="col-lg-8 col-sm-11 boxik p-5">
+                <div>
+                    <div id="how-mutch-table" class="table-responsive"></div>
+                    <div class="slidecontainer">
+                        <div class="">
+                            <input id="slider1" class="slider " type="range" min="1" default 0 max="100" // step="1" //
+                                default 1 value="20" // default horizontal width="400px">
+                            <div>
+
+                             
+
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button onclick="plus_minis_slider(-1)" class=" btn btn-danger btn-number input_but">-</button>
+                                    </span>
+                                    <input type="number" width="505px" class=" input-number  font-weight-bold enter_input " value="20"
+                                        name="" id="demo">
+                                        <span class="input-group-btn">
+                                            <button onclick="plus_minis_slider(1)" data-type="plus" class="btn btn-success btn-number input_but">+</button>
+                                        </span>
+                                </div>
+                            </div>
+
+
+                            <br>
+                            <table class="mb-4">
+                                <tbody class="roll-icon">
+                                    <TR>
+                                        <td onclick="plus_minis_slider(-1)">-</td>
+                                        <td><input type="button" onclick="rolldice()"
+                                                class="pure-button pure-button-primary" value="roll"></td>
+                                        <td onclick="plus_minis_slider(+1)">+</td>
+                                    </TR>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+        <div class="">
+            <div class="">
 
-    </div>
+                <div class="conteiner">
+                    <div class="row">
+                        <div class="col-3">
+                            <table class="table table-secondary table-striped">
+                                <thead>
+                                    <tr>
+                                        <th># </th>
+                                        <th>H </th>
+                                        <th>W</th>
+                                        <th>S </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="roll-icon">
+                                    <tr>
+                                        <td id="res2"> </td>
+                                        <td>2+</td>
+                                        <td>2+</td>
+                                        <td>2+</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="res3"> </td>
+                                        <td>3+</td>
+                                        <td>3+</td>
+                                        <td>3+</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="res4"> </td>
+                                        <td>4+</td>
+                                        <td>4+</td>
+                                        <td>4+</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="res5"> </td>
+                                        <td>5+</td>
+                                        <td>5+</td>
+                                        <td>5+</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="res6"> </td>
+                                        <td>6+</td>
+                                        <td>6+</td>
+                                        <td>6+</td>
 
-    <div class="pure-g">
-        <div class="pure-u-1-12"> </div>
-        <div class="pure-u-1-2">
-            <p>
-            <div id="how-mutch-table"></div>
-            <div class="slidecontainer">
-                <div class="">
-                    <input id="slider1" class="slider" type="range" min="1" default 0 max="100" // step="1" // default 1
-                        value="20" // default horizontal width="400px">
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <p>Value:</p> <input type="number" class="form-control" value="20" name="" id="demo">
-                    <br>
-                    <table class="mb-4">
-                        <tbody class="roll-icon">
-                            <TR>
-                                <td onclick="plus_minis_slider(-1)">-</td>
-                                <td><input type="button" onclick="rolldice()" class="pure-button pure-button-primary"
-                                        value="roll"></td>
-                                <td onclick="plus_minis_slider(+1)">+</td>
-                            </TR>
-                        </tbody>
-                    </table>
+                        <div class="col-5">
 
+
+
+                            <table class="table-block">
+                                <thead>
+                                    <tr>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="roll-icon">
+                                    <tr class="number_of_roll">
+                                        <td id="result1">#</td>
+                                        <td id="result2">#</td>
+                                        <td id="result3">#</td>
+                                        <td id="result4">#</td>
+                                        <td id="result5">#</td>
+                                        <td id="result6">#</td>
+                                    </tr>
+                                    <tr>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                        <td><button onclick="re-roll()"
+                                                class="pure-button pure-button-primary">re-roll</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                        <td><button onclick="roll-add()"
+                                                class="pure-button pure-button-primary">roll-add</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="one"></td>
+                                        <td id="two"></td>
+                                        <td id="three"></td>
+                                        <td id="four"></td>
+                                        <td id="five"></td>
+                                        <td id="six"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="slider-two-hand">
+                            <script>
+                                var slider = document.getElementById('slider-two-hand');
+
+                                noUiSlider.create(slider, {
+                                    start: [1, 6],
+                                    connect: true,
+                                    snap: true,
+                                    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
+                                    range: {
+                                        'min': 1,
+                                        '20%': 2,
+                                        '40%': 3,
+                                        '60%': 4,
+                                        '80%': 5,
+                                        'max': 6
+                                    },
+                                    pips: {
+                                        mode: 'values',
+                                        values: [1, 2, 3, 4, 5, 6],
+                                        density: 1
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
 </body>
-<div class="pure-g">
-
-    <div class="pure-u-1-12"></div>
-    <div class="pure-u-1-6">
-        </table>
-        <table class="pure-table">
-            <thead>
-                <tr>
-                    <th># </th>
-                    <th>H </th>
-                    <th>W</th>
-                    <th>S </th>
-                </tr>
-            </thead>
-            <tbody class="roll-icon">
-                <tr>
-                    <td id="res2"> </td>
-                    <td>2+</td>
-                    <td>2+</td>
-                    <td>2+</td>
-                </tr>
-                <tr>
-                    <td id="res3"> </td>
-                    <td>3+</td>
-                    <td>3+</td>
-                    <td>3+</td>
-                </tr>
-                <tr>
-                    <td id="res4"> </td>
-                    <td>4+</td>
-                    <td>4+</td>
-                    <td>4+</td>
-                </tr>
-                <tr>
-                    <td id="res5"> </td>
-                    <td>5+</td>
-                    <td>5+</td>
-                    <td>5+</td>
-                </tr>
-                <tr>
-                    <td id="res6"> </td>
-                    <td>6+</td>
-                    <td>6+</td>
-                    <td>6+</td>
-
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="pure-u-1-3">
-
-
-        <table class="pure-table">
-            <thead>
-                <tr>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                </tr>
-            </thead>
-            <tbody class="roll-icon">
-                <tr class="number_of_roll">
-                    <td id="result1">#</td>
-                    <td id="result2">#</td>
-                    <td id="result3">#</td>
-                    <td id="result4">#</td>
-                    <td id="result5">#</td>
-                    <td id="result6">#</td>
-                </tr>
-                <tr>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                    <td><button onclick="re-roll()" class="pure-button pure-button-primary">re-roll</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                    <td><button onclick="roll-add()" class="pure-button pure-button-primary">roll-add</button></td>
-                </tr>
-                <tr>
-                    <td id="one"></td>
-                    <td id="two"></td>
-                    <td id="three"></td>
-                    <td id="four"></td>
-                    <td id="five"></td>
-                    <td id="six"></td>
-                </tr>
 
 
 
-    </div>
-</div>
 
-<div id="slider-two-hand">
-    <script>
-        var slider = document.getElementById('slider-two-hand');
 
-        noUiSlider.create(slider, {
-            start: [1, 6],
-            connect: true,
-            snap: true,
-            tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
-            range: {
-                'min': 1,
-                '20%': 2,
-                '40%': 3,
-                '60%': 4,
-                '80%': 5,
-                'max': 6
-            },
-            pips: {
-                mode: 'values',
-                values: [1, 2, 3, 4, 5, 6],
-                density: 1
-            }
-        });
-    </script>
-</div>
-<br><br><br><br><br>
+
+
+
+
+
+
 <script>
     function rolldice() {
         var number_roll = document.getElementById("demo").value;
@@ -206,6 +261,7 @@
             document.getElementById("result" + i).innerHTML = dice_dic[i];
         }
         draw_dice();
+        resolut_count()
     }
 
 </script>
@@ -234,6 +290,7 @@
 
 <script>
     let table = document.createElement('table');
+    table.setAttribute("class", "table table_dice");
     let thead = document.createElement('thead');
     thead.setAttribute('class', 'roll-icon');
     let tbody = document.createElement('tbody');
@@ -268,9 +325,6 @@
 
 </script>
 
-
-
-
 <script>function change_value(value) {
 
         document.getElementById("slider1").value = value
@@ -291,30 +345,21 @@
                 var one = document.createElement('i');
                 one.setAttribute('class', 'fas fa-dice-' + Element);
                 document.getElementById("" + Element + "").appendChild(one);
-
             }
-
-
         });
 
     }
 </script>
 
-
 <script>
     function resolut_count() {
-        for (let i = 2; i < 5; i++) {
+        for (let i = 2; i < 7; i++) {
             var collum = document.getElementById("res" + i)
-
-
             count = 0
-            for (let k = 1; k < 5; k++) {
+            for (let k = i; k < 7; k++) {
                 count += Number(document.getElementById("result" + k).innerHTML)
             }
-           
-            document.getElementById("result" + i).innerHTML =count
-
-
+            document.getElementById("res" + i).innerHTML = count
         }
     }
 </script>
