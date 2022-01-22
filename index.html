@@ -48,30 +48,32 @@
                                 default 1 value="20" // default horizontal width="400px">
                             <div>
 
-                             
+
 
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button onclick="plus_minis_slider(-1)" class=" btn btn-danger btn-number input_but">-</button>
+                                        <button onclick="plus_minis_slider(-1)"
+                                            class=" btn btn-danger btn-number input_but">-</button>
                                     </span>
-                                    <input type="number" width="505px" class=" input-number  font-weight-bold enter_input " value="20"
-                                        name="" id="demo">
-                                        <span class="input-group-btn">
-                                            <button onclick="plus_minis_slider(1)" data-type="plus" class="btn btn-success btn-number input_but">+</button>
-                                        </span>
+                                    <input type="number" width="505px"
+                                        class=" input-number  font-weight-bold enter_input " value="20" name=""
+                                        id="demo">
+                                    <span class="input-group-btn">
+                                        <button onclick="plus_minis_slider(1)" data-type="plus"
+                                            class="btn btn-success btn-number input_but">+</button>
+                                    </span>
                                 </div>
                             </div>
 
-
                             <br>
                             <table class="mb-4">
-                                <tbody class="roll-icon">
-                                    <TR>
-                                        <td onclick="plus_minis_slider(-1)">-</td>
-                                        <td><input type="button" onclick="rolldice()"
-                                                class="pure-button pure-button-primary" value="roll"></td>
-                                        <td onclick="plus_minis_slider(+1)">+</td>
-                                    </TR>
+                                <tbody class="">
+                                    <tr>
+                                        <td>
+                                            <input type="button" onclick="rolldice()"
+                                                class="pure-button pure-button-primary roll_button" value="roll dice">
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
 
